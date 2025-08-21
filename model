@@ -1,1 +1,23 @@
-./
+File name: course.model.ts
+export interface Course {
+  id: string;
+  title: string;
+  deptid: string;
+  credits: number;
+}
+
+File name: department.model.ts
+export interface Department {
+  id: string;
+  deptname: string;
+  hod: string;
+}
+
+File name: student.model.ts
+export interface Student {
+  id: string;
+  name: string;
+  email: string;
+  departmentId: string;
+  enrollmentYear: number;
+}
