@@ -26,21 +26,6 @@ Data Storage: LocalStorage
 📂 Project Structure
 src/
  ├── app/
- │    ├── components/
- │    │     ├── student/
- │    │     ├── department/
- │    │     ├── course/
- │    │     
- │    │
- │    ├── models/
- │    │     ├── student.model.ts
- │    │     ├── department.model.ts
- │    │     └── course.model.ts
- │    │
- │    |
- │    │
- │    ├── app.component.ts
- │    └── app.module.ts
- │
- ├── assets/   (static files, images, css)
- └── index.html
+ │    ├── components/ -> student, department, course
+ │    ├── models/ -> student.model.ts, department.model.ts, course.model.ts
+
