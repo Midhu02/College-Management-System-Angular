@@ -1,0 +1,94 @@
+/* Container Styling */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Form Title */
+h2 {
+  font-size: 28px;
+  font-weight: 700;
+  text-align: center;
+  color: #004aad;
+  margin-bottom: 30px;
+}
+
+/* Section Titles */
+h4 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
+  border-left: 4px solid #004aad;
+  padding-left: 10px;
+}
+
+/* Labels */
+label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+}
+
+/* Input & Select Fields */
+.form-control,
+.form-select {
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: #004aad;
+  box-shadow: 0 0 6px rgba(0, 74, 173, 0.3);
+  outline: none;
+}
+
+/* Error Messages */
+.text-danger {
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+/* Navigation Buttons */
+button {
+  border-radius: 8px;
+  padding: 10px 22px;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 2%;
+}
+
+.btn-primary {
+  background-color: #004aad;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #00327a;
+}
+
+.btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #1f8c39;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #545b62;
+}

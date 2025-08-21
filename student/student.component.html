@@ -1,0 +1,69 @@
+<app-dashboard></app-dashboard>
+
+<div class="student-section">
+    <p>STUDENT DETAILS</p>
+
+    <div *ngIf="isListPage">
+        <button type="button" class="btn btn-success mb-3" (click)="openModal()">Add Student Details</button>
+
+        <!-- Modal -->
+        <div *ngIf="showModal" class="modal show d-block" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form #studentForm="ngForm" (ngSubmit)="onSubmit(studentForm)">
+                        <div class="modal-header">
+                            <h5 class="modal-title">
+                                {{ isEditMode ? 'Edit Student Details' : 'Create Student Details' }}
+                            </h5>
+                            <button type="button" class="btn-close" (click)="closeModal()" aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label">ID:</label>
+                                <input type="text" name="id" class="form-control" [(ngModel)]="studentFormModel.id"
+                                    required [readonly]="isEditMode" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Name:</label>
+                                <input type="text" name="name" class="form-control" [(ngModel)]="studentFormModel.name"
+                                    required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Email:</label>
+                                <input type="email" name="email" class="form-control"
+                                    [(ngModel)]="studentFormModel.email" required />
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Department ID:</label>
+                                <select name="departmentId" class="form-select"
+                                    [(ngModel)]="studentFormModel.departmentId" required>
+                                    <option *ngFor="let dept of departmentList" [value]="dept.id">{{ dept.id }}</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Enrollment Year:</label>
+                                <input type="number" name="enrollmentYear" class="form-control"
+                                    [(ngModel)]="studentFormModel.enrollmentYear" [min]="2000" [max]="2025" required />
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" (click)="closeModal()">Close</button>
+                            <button type="submit" class="btn btn-primary">
+                                {{ isEditMode ? 'Update' : 'Save' }} Student
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <button class="btn btn-info mt-3" (click)="filterdept()">Filter Students by Department</button>
+        <app-student-details (editStudent)="onEdit($event)"></app-student-details>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="coursedetails-section">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Department</th>
+                <th>Credits</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let emp of courses">
+                <td>{{ emp.id }}</td>
+                <td>{{ emp.title }}</td>
+                <td>{{ emp.deptid }}</td>
+                <td>{{ emp.credits }}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="onEdit(emp.id)">Edit</button>
+                    <button class="btn btn-danger" (click)="onDelete(emp.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

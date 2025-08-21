@@ -1,0 +1,66 @@
+/* Container styles */
+.sidelogo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.sidelogo img {
+  width: 190px;
+  height: 60px;
+}
+
+/* Buttons */
+.btnlogin,
+.btnregister {
+  background-color: #004aad; 
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 18px;
+  margin: 10px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btnregister {
+  background-color: #00b894; 
+}
+
+.btnlogin:hover {
+  background-color: #003580;
+}
+
+.btnregister:hover {
+  background-color: #019874;
+}
+
+/* Positioning buttons on the top-right */
+.btnlogin,
+.btnregister {
+  position: absolute;
+  top: 20px;
+}
+
+.btnlogin {
+  right: 120px;
+}
+
+.btnregister {
+  right: 20px;
+}
+
+/* College image */
+.college {
+  display: flex;
+  justify-content: center;
+  margin-top: 120px; 
+}
+
+.college img {
+  width: 70%;
+  max-width: 900px;
+  border-radius: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}

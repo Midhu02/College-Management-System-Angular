@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Dep Id</th>
+            <th>Department</th>
+            <th>Head of Department</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (emp of departments; track emp.id) {
+        <tr>
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.deptname }}</td>
+            <td>{{ emp.hod }}</td>
+            <td>
+                <button class="btn btn-primary mt-2" (click)="onEditdept(emp.id)">Edit</button>
+                &nbsp;
+                <button class="btn btn-danger mt-2" (click)="onDelete(emp.id)">Delete</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+
+</table>

@@ -1,0 +1,26 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Emp ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Year</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let emp of students">
+            <td>{{ emp.id }}</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.email }}</td>
+            <td>{{ emp.departmentId }}</td>
+            <td>{{ emp.enrollmentYear }}</td>
+            <td>
+                <button class="btn btn-primary" (click)="onEdit(emp.id)">Edit</button>
+                &nbsp;
+                <button class="btn btn-danger" (click)="onDelete(emp.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

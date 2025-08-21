@@ -1,0 +1,12 @@
+.filter-section {
+  margin-left: 240px; /* if sidebar is 220-240px wide */
+  padding: 20px;
+}
+
+.filter-section p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 15px;
+}
+

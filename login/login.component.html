@@ -1,0 +1,18 @@
+<div class="container">
+    <form class="login-part" (ngSubmit)="onLogin()">
+        <div class="title">Login Details</div>
+        <div class="fields">
+            <div class="username">
+                <input type="text" class="form-control" [(ngModel)]="username" placeholder="username" name="username"
+                    required>
+            </div>
+            <div class="password">
+                <input type="password" class="form-control mt-2" [(ngModel)]="password" placeholder="Password"
+                    name="password" autocomplete="new-password" required>
+            </div>
+        </div>
+        <button type="submit" class="login-button">Login</button>
+        <div class="link"><a href="#">Forget password?</a> or <a href="#">Sign up</a>
+        </div>
+    </form>
+</div>

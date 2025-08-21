@@ -1,0 +1,38 @@
+<app-dashboard></app-dashboard>
+
+<div class="coursefilter-section">
+    <p>Filter Course by Department</p>
+
+    <div class="container">
+        <br /><br />
+        <div class="row mb-3">
+            <div class="col-md-2">
+                <select [(ngModel)]="selectedCourse" class="form-control">
+                    <option value="">All Departments ↓</option>
+                    <option *ngFor="let dept of departmentList" [value]="dept.id">
+                        {{ dept.id }}
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Department</th>
+                    <th>Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let course of filteredCourse()">
+                    <td>{{ course.id }}</td>
+                    <td>{{ course.title }}</td>
+                    <td>{{ getDepartmentName(course.deptid) }}</td>
+                    <td>{{ course.credits }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+<app-dashboard></app-dashboard>
+
+<div class="course-section">
+  <p>COURSE DETAILS</p>
+
+  <div *ngIf="isListPage">
+    <button type="button" class="btn btn-primary" (click)="openModal()">
+      Add Course Details
+    </button>
+
+    <div #exampleModal class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <form #courseForm="ngForm" (ngSubmit)="onSubmit(courseForm)">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                {{ isEditMode ? 'Edit Course Details' : 'Create Course Details' }}
+              </h5>
+              <button type="button" class="btn-close" (click)="modalInstance.hide()" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+              <div class="mb-3">
+                <label class="form-label">ID:</label>
+                <input type="text" name="id" class="form-control" [(ngModel)]="courses.id" required
+                  [readonly]="isEditMode" />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Title:</label>
+                <input type="text" name="title" class="form-control" [(ngModel)]="courses.title" required
+                  [readonly]="isEditMode" />
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Dept ID:</label>
+                <select name="deptid" class="form-select" [(ngModel)]="courses.deptid" required>
+                  <option *ngFor="let dept of departmentList" [value]="dept.id">
+                    {{ dept.id }}
+                  </option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label">Credits:</label>
+                <input type="number" name="credits" class="form-control" [(ngModel)]="courses.credits" required min="1"
+                  max="6" />
+              </div>
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" (click)="modalInstance.hide()">
+                Close
+              </button>
+              <button type="submit" class="btn btn-primary">
+                {{ isEditMode ? 'Update ' : 'Save ' }} Course
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-info mt-3" (click)="filterdeptcourse()">
+      Filter Course by Department
+    </button>
+  </div>
+
+  <app-course-details (editCourse)="onEdit($event)"></app-course-details>
+</div>

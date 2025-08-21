@@ -1,0 +1,26 @@
+<div class="sidenavbar">
+    <div class="container">
+        <nav>
+            <button type="button" routerLink="/student" routerLinkActive="active-button"
+                [routerLinkActiveOptions]="{ exact: true }">
+                STUDENT
+            </button>
+
+            <button type="button" routerLink="/department" routerLinkActive="active-button"
+                [routerLinkActiveOptions]="{ exact: true }">
+                DEPARTMENT
+            </button>
+
+            <button type="button" routerLink="/course" routerLinkActive="active-button"
+                [routerLinkActiveOptions]="{ exact: true }">
+                COURSE
+            </button>
+        </nav>
+        <footer>
+            <button type="button" routerLink="/home" routerLinkActive="active-button"
+                [routerLinkActiveOptions]="{ exact: true }">
+                Log Out
+            </button>
+        </footer>
+    </div>
+</div>

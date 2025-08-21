@@ -1,0 +1,43 @@
+.coursefilter-section {
+  margin-left: 240px; /* if sidebar is 220-240px wide */
+  padding: 20px;
+}
+
+.coursefilter-section p {
+  font-size: 20px;
+  font-weight: 600;
+  color: #343a40;
+  margin-bottom: 15px;
+}
+
+.coursefilter-section button{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    text-align: left;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1%;
+
+}
+
+.active-button {
+  background-color: #28a745; /* Green to indicate active */
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 128, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.active-button:hover {
+  background-color: #218838;
+  transform: scale(1.03);
+}

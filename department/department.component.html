@@ -1,0 +1,60 @@
+<app-dashboard></app-dashboard>
+<div class="department-section">
+    <p>DEPARTMENT DETAILS</p>
+
+    <div *ngIf="isListPage">
+        <button type="button" class="btn btn-success" (click)="openModal()">
+            Add Department Details
+        </button>
+
+        <div #exampleModal class="modal fade" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form #departmentForm="ngForm" (ngSubmit)="onSubmit(departmentForm)">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">
+                                {{ isEditMode ? 'Edit Department Details' : 'Create Department Details' }}
+                            </h5>
+                            <button type="button" class="btn-close" (click)="modalInstance.hide()"
+                                aria-label="Close"></button>
+                        </div>
+
+                        <div class="modal-body">
+                            <div class="mb-3">
+                                <label class="form-label">ID:</label>
+                                <input type="text" name="id" class="form-control" [(ngModel)]="departments.id" required
+                                    [readonly]="isEditMode" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Department:</label>
+                                <select name="departmentId" class="form-select" [(ngModel)]="departments.deptname"
+                                    required>
+                                    <option *ngFor="let dept of departmentList" [value]="dept.id">
+                                        {{ dept.id }}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label>Department Head:</label>
+                                <input type="text" name="hod" class="form-control" [(ngModel)]="departments.hod"
+                                    required />
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary"
+                                (click)="modalInstance.hide()">Close</button>
+                            <button type="submit" class="btn btn-primary">
+                                {{ isEditMode ? 'Update' : 'Save' }} Department
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-department-details (editDepartment)="onEditdept($event)"></app-department-details>
+
+</div>
